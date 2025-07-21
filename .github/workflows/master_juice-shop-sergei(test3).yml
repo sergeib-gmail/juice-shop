@@ -50,6 +50,9 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+        
+      - name: Wait before deployment # This is the step that adds the delay
+        run: sleep 60s # Pauses the workflow for 60 seconds
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
